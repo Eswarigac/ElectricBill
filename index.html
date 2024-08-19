@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            height: 100px;
+            width: 800px;
+            border: 1px solid transparent;
+            margin-top: 50px;
+        }
+        th,td{
+            height: 100px;
+            width: 100px;
+            border: 1px solid rgb(12, 67, 112);
+            text-align: center;
+            background-color: rgb(32, 146, 240);
+        }
+       td:hover{
+        background-color: rgb(20, 20, 107);
+        color: white;
+        cursor: pointer;
+       }
+        th:hover{
+        background-color: rgb(20, 20, 107);
+        color: white;
+        cursor: pointer;
+       }
+        button{
+            height: 40px;
+            width: 100px;
+            margin-top: 30px;
+            margin-left: 30px;
+            box-shadow: 0 0 7px rgb(101, 101, 102);
+        }
+        button:hover{
+            background-color: rgb(20, 20, 107);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: rgb(20, 20, 107); text-align: center;">ElectricBill</h1>
+    <label for="ElectricBill" style=" margin-left: 30px;">ElectricBill:</label>
+
+    <input type="number" id="demo">    <br>
+    <button onclick="show()">submit</button>
+    <div id="one">
+        <table>
+           <tr>
+            <th>No</th>
+            <th>Units</th>
+            <th>Per unit</th>
+            <th>Tax</th>
+            <th>Total</th>
+           </tr>
+           <tr>
+            <td id="two">1</td>
+            <td id="three"></td>
+            <td id="four"></td>
+            <td id="five"></td>
+            <td id="six"></td>
+           </tr>
+        </table>
+
+    </div>
+    <script>
+        function show()
+        {
+            let result=document.getElementById("demo").value;
+            if(result<=100){
+                document.getElementById("three").innerHTML=(result);
+                document.getElementById("four").innerHTML=("-");
+                document.getElementById("five").innerHTML=("-");
+                document.getElementById("six").innerHTML=("Free");
+               
+            }
+            else if(result<=200){
+                document.getElementById("three").innerHTML=(result);
+                document.getElementById("four").innerHTML=("2.5");
+                document.getElementById("five").innerHTML=((result*2.5)/20);
+                document.getElementById("six").innerHTML=((result*5.5)/20+(result*2.5));
+               
+            }
+            else if(result<=300){
+                document.getElementById("three").innerHTML=(result);
+                document.getElementById("four").innerHTML=("3.5");
+                document.getElementById("five").innerHTML=((result*3.5)/20);
+                document.getElementById("six").innerHTML=((result*5.5)/20+(result*3.5));
+               
+            }
+            else if(result<=400){
+                document.getElementById("three").innerHTML=(result);
+                document.getElementById("four").innerHTML=("4.5");
+                document.getElementById("five").innerHTML=((result*4.5)/20);
+                document.getElementById("six").innerHTML=((result*5.5)/20+(result*4.5));
+               
+            }
+            else if(result<=500){
+                document.getElementById("three").innerHTML=(result);
+                document.getElementById("four").innerHTML=("5.5");
+                document.getElementById("five").innerHTML=((result*5.5)/20);
+                document.getElementById("six").innerHTML=((result*5.5)/20+(result*5.5));
+               
+            }
+            else{
+                document.getElementById("three").innerHTML=(result);
+                document.getElementById("four").innerHTML=("-");
+                document.getElementById("five").innerHTML=("-");
+                document.getElementById("six").innerHTML=("Contact EB Office");
+            }
+
+    }
+    </script>
+</body>
+</html>
+<!-- 220*3.5= +20% -->
